@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multiple-containers-pod
+spec:
+  containers:
+  - name: ubuntu1
+    image: ubuntu
+    command: ["/bin/sh"]
+    args: ["-c", "while true; do echo hello1; sleep 1; done"]
+  - name: ubuntu2
+    image: ubuntu
+    command: ["/bin/sh"]
+    args: ["-c", "while true; do echo hello2; sleep 1; done"]
